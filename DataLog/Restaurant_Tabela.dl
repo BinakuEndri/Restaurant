@@ -1,0 +1,133 @@
+%Tavolina (ID, Statusi).
+Tavolina(1, 'E Lire').
+Tavolina(2, 'E Lire').
+Tavolina().
+Tavolina().
+Tavolina().
+Tavolina().
+Tavolina().
+Tavolina().
+Tavolina().
+Tavolina().
+
+
+%Stafi(ID, Emri, Mbiemri, Roli, Paga, Adresa, Nr.Tel).
+Stafi(1, 'Gabi', 'Stevens', 'Menaxher', 1150, 'Drenas', 38349271596 ).
+Stafi(2, 'Denise', 'Blooman', 'Recepsionit', 500, 'Prishtine', 38349528431).
+Stafi().
+Stafi().
+Stafi().
+Stafi().
+Stafi().
+Stafi().
+Stafi().
+Stafi().
+
+
+%Konsumatori (ID, Emri,Mbiemri, Telefoni, Adresa).
+Konsumatori().
+Konsumatori().
+Konsumatori().
+Konsumatori().
+Konsumatori().
+Konsumatori().
+Konsumatori().
+Konsumatori().
+Konsumatori().
+Konsumatori().
+
+
+%Rezervimet(ID, Data, Rezevuar, Puntori, Klienti, Tavolina, Anuluar).
+Rezervimet().
+Rezervimet().
+Rezervimet().
+Rezervimet().
+Rezervimet().
+Rezervimet().
+Rezervimet().
+Rezervimet().
+Rezervimet().
+Rezervimet().
+
+
+%Porosia(ID, Tavolina, Punetori, Artikuj, Data).
+Porosia().
+Porosia().
+Porosia().
+Porosia().
+Porosia().
+Porosia().
+Porosia().
+Porosia().
+Porosia().
+Porosia().
+
+
+%Menu(ID, Kategoria , Ushqimi , Pershkrimi , Cmimi).
+Menu().
+Menu().
+Menu().
+Menu().
+Menu().
+Menu().
+Menu().
+Menu().
+Menu().
+Menu().
+
+
+%Pagesa(ID, Kategoria , Punetori , Porosia, Shuma, Forma).
+Pagesa().
+Pagesa().
+Pagesa().
+Pagesa().
+Pagesa().
+Pagesa().
+Pagesa().
+Pagesa().
+Pagesa().
+Pagesa().
+
+
+%Furnizimi(ID, Perberesit , Furnizuesi, Puntori, Data e Furnizimit, Data E Skadimit, Qmimi, Sasia).
+Furnizimi().
+Furnizimi().
+Furnizimi().
+Furnizimi().
+Furnizimi().
+Furnizimi().
+Furnizimi().
+Furnizimi().
+Furnizimi().
+Furnizimi().
+
+
+
+%Furnizuesi(ID, Emri, Kontakti).
+Furnizuesi().
+Furnizuesi().
+Furnizuesi().
+Furnizuesi().
+Furnizuesi().
+Furnizuesi().
+Furnizuesi().
+Furnizuesi().
+Furnizuesi().
+Furnizuesi().
+
+
+%Stoqet(ID, Produkti, Sasia, Vendi, Furnizimi).
+Stoqet().
+Stoqet().
+Stoqet().
+Stoqet().
+Stoqet().
+Stoqet().
+Stoqet().
+Stoqet().
+Stoqet().
+Stoqet().
+
+
+
+
