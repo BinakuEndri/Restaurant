@@ -1,82 +1,91 @@
 %Tavolina (ID, Statusi).
+
 Tavolina(1, 'E Lire').
 Tavolina(2, 'E Lire').
-Tavolina().
-Tavolina().
-Tavolina().
-Tavolina().
-Tavolina().
-Tavolina().
-Tavolina().
-Tavolina().
+Tavolina(3, 'E Zene').
+Tavolina(4, 'E Lire').
+Tavolina(5, 'E Zene').
+Tavolina(6, 'E Lire').
+Tavolina(7, 'E Zene').
+Tavolina(8, 'E Lire').
+Tavolina(9, 'E Zene').
+Tavolina(10, 'E Zene').
+
+
 
 
 %Stafi(ID, Emri, Mbiemri, Roli, Paga, Adresa, Nr.Tel).
+
 Stafi(1, 'Gabi', 'Stevens', 'Menaxher', 1150, 'Drenas', 38349271596 ).
 Stafi(2, 'Denise', 'Blooman', 'Recepsionit', 500, 'Prishtine', 38349528431).
-Stafi().
-Stafi().
-Stafi().
-Stafi().
-Stafi().
-Stafi().
-Stafi().
-Stafi().
+Stafi(3,'Lutero','Soldi', 'Kamarier', 500,'Prizren',38349900960).
+Stafi(4, 'Zita', 'Mandres', 'Krye-Kamarier', 650, 'Malisheve',38349136737).
+Stafi(5, 'Fernanda', 'Limpenny', 'Kuzhinier', 800, 'Peje', 38349145741).
+Stafi(6, 'Inge', 'Anstiss', 'Ndihmes Kuzhinier', 600, 'Kline', 38349772449).
+Stafi(7, 'Riano', 'Bunch', 'Krye Kuzhinier', 1200, 'Mitrovice', 38349117298).
+Stafi(8, 'Starlin', 'Fennell', 'Recepsionit', 500, 'Prishtine', 38349289592).
+Stafi(9, 'Auberta', 'Tiler', 'Kuzhinier', 800, 'Drenas', 38349729998).
+Stafi(10, 'Anthiathia', 'Fern', 'Kamarier', 411, 'Malisheve', 38349148062).
 
 
 %Konsumatori (ID, Emri,Mbiemri, Telefoni, Adresa).
-Konsumatori().
-Konsumatori().
-Konsumatori().
-Konsumatori().
-Konsumatori().
-Konsumatori().
-Konsumatori().
-Konsumatori().
-Konsumatori().
-Konsumatori().
+
+Konsumatori(182628905, 'Farrel', 'Houten', 38349867123, 'Prishtine').
+Konsumatori(329205740, 'Tanya', 'Bissett', 38349312838, 'Drenas').
+Konsumatori(454035610, 'Kelsey', 'Pibworth', 38349622172, 'Malisheve').
+Konsumatori(173157921, 'Even', 'Ranshaw', 38349208401, 'Peje').
+Konsumatori(557467478, 'Christoper', 'Alf', 38349177000, 'Prizren').
+Konsumatori(437644808, 'Chloris', 'Hallowes', 38349970004, 'Drenas').
+Konsumatori(402863845, 'Tallou', 'Denman', 38349775717, 'Prishtine').
+Konsumatori(412480259, 'Helga', 'Gimbart', 38349261991, 'Gjakove').
+Konsumatori(268247245, 'Aldis', 'Manns', 38349741071, 'Prizren').
+Konsumatori(953324644, 'Polly', 'Revelle', 38349987526, 'Malisheve').
 
 
 %Rezervimet(ID, Data, Rezevuar, Puntori, Klienti, Tavolina, Anuluar).
-Rezervimet().
-Rezervimet().
-Rezervimet().
-Rezervimet().
-Rezervimet().
-Rezervimet().
-Rezervimet().
-Rezervimet().
-Rezervimet().
-Rezervimet().
+
+Rezervimet(1, 10/27/2022, 10/29/2022, 2, 329205740, 3, FALSE).
+Rezervimet(2, 03/23/2021, 03/28/2021, 8, 557467478, 4, FALSE).
+Rezervimet(3, 10/15/2021, 10/18/2021, 2, 402863845, 1, FALSE).
+Rezervimet(4, 09/17/2022, 09/18/2022, 8, 412480259, 2, TRUE).
+Rezervimet(5, 03/23/2022, 03/28/2022, 8, 329205740, 3, TRUE).
+Rezervimet(6, 08/28/2021, 09/11/2021, 2, 268247245, 2, FALSE).
+Rezervimet(7, 05/23/2022, 05/25/2022, 2, 557467478, 3, TRUE).
+Rezervimet(8, 01/18/2021, 01/21/2021, 8, 437644808, 7, FALSE).
+Rezervimet(9, 04/15/2022, 04/15/2022, 2, 329205740, 8, FALSE).
+Rezervimet(10, 10/15/2022, 10/15/2022, 8, 173157921, 10, FALSE).
 
 
 %Porosia(ID, Tavolina, Punetori, Artikuj, Data).
-Porosia().
-Porosia().
-Porosia().
-Porosia().
-Porosia().
-Porosia().
-Porosia().
-Porosia().
-Porosia().
-Porosia().
+
+Porosia(1, 3, 10, 2, 08/31/2021).
+Porosia(2, 4, 3, 4, 03/19/2021).
+Porosia(3, 1, 4, 5, 03/15/2022).
+Porosia(4, 2, 10, 1, 02/15/2021).
+Porosia(5, 3, 4, 2, 04/27/2022).
+Porosia(6, 2, 4, 4, 09/24/2022).
+Porosia(7, 3, 3, 6, 01/29/2022).
+Porosia(8, 7, 3, 2, 05/15/2022).
+Porosia(9, 8, 10, 2, 01/29/2022).
+Porosia(10, 10, 4, 1, 05/15/2022).
 
 
 %Menu(ID, Kategoria , Ushqimi , Pershkrimi , Cmimi).
-Menu().
-Menu().
-Menu().
-Menu().
-Menu().
-Menu().
-Menu().
-Menu().
-Menu().
-Menu().
+
+Menu(1, 'Pica', 'Shtepie', '/', 6).
+Menu(2, 'Mengjes', 'Omlet', '/', 2).
+Menu(3, 'Skara', 'Mish Qingji', '/', 9.5).
+Menu(4, 'Pije', 'Birre', '/', 2).
+Menu(5, 'Skara', 'Biftek Viqi', '/', 14).
+Menu(6, 'Pasta', 'Boloneze', '/', 4).
+Menu(7, 'Rizoto', 'Fruta Deti', '/', 7).
+Menu(8, 'Ushqim Deti', 'Midhje', '/', 12).
+Menu(9, 'Pica', 'Pershute', '/', 5).
+Menu(10, 'Skara', 'Kombinim', '/', 9).
 
 
 %Pagesa(ID, Kategoria , Punetori , Porosia, Shuma, Forma).
+
 Pagesa().
 Pagesa().
 Pagesa().
@@ -90,6 +99,7 @@ Pagesa().
 
 
 %Furnizimi(ID, Perberesit , Furnizuesi, Puntori, Data e Furnizimit, Data E Skadimit, Qmimi, Sasia).
+
 Furnizimi().
 Furnizimi().
 Furnizimi().
@@ -104,6 +114,7 @@ Furnizimi().
 
 
 %Furnizuesi(ID, Emri, Kontakti).
+
 Furnizuesi().
 Furnizuesi().
 Furnizuesi().
@@ -117,6 +128,7 @@ Furnizuesi().
 
 
 %Stoqet(ID, Produkti, Sasia, Vendi, Furnizimi).
+
 Stoqet().
 Stoqet().
 Stoqet().
