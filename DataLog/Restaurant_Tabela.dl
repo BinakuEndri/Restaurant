@@ -86,7 +86,7 @@ Menu(10, 'Skara', 'Kombinim', '/', 9).
 
 %Pagesa(ID, Kategoria , Punetori , Porosia, Shuma, Forma).
 
-Pagesa().
+Pagesa(5,).
 Pagesa().
 Pagesa().
 Pagesa().
