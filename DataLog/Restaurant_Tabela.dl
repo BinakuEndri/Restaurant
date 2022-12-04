@@ -1,143 +1,92 @@
-%Tavolina (ID, Statusi).
+%tavolina (ID, Statusi).
 
-Tavolina(1, 'E Lire').
-Tavolina(2, 'E Lire').
-Tavolina(3, 'E Zene').
-Tavolina(4, 'E Lire').
-Tavolina(5, 'E Zene').
-Tavolina(6, 'E Lire').
-Tavolina(7, 'E Zene').
-Tavolina(8, 'E Lire').
-Tavolina(9, 'E Zene').
-Tavolina(10, 'E Zene').
-
-
-%Stafi(ID, Emri, Mbiemri, Roli, Paga, Adresa, Nr.Tel).
-
-Stafi(1, 'Gabi', 'Stevens', 'Menaxher', 1150, 'Drenas', 38349271596 ).
-Stafi(2, 'Denise', 'Blooman', 'Recepsionit', 500, 'Prishtine', 38349528431).
-Stafi(3,'Lutero','Soldi', 'Kamarier', 500,'Prizren',38349900960).
-Stafi(4, 'Zita', 'Mandres', 'Krye-Kamarier', 650, 'Malisheve',38349136737).
-Stafi(5, 'Fernanda', 'Limpenny', 'Kuzhinier', 800, 'Peje', 38349145741).
-Stafi(6, 'Inge', 'Anstiss', 'Ndihmes Kuzhinier', 600, 'Kline', 38349772449).
-Stafi(7, 'Riano', 'Bunch', 'Krye Kuzhinier', 1200, 'Mitrovice', 38349117298).
-Stafi(8, 'Starlin', 'Fennell', 'Recepsionit', 500, 'Prishtine', 38349289592).
-Stafi(9, 'Auberta', 'Tiler', 'Kuzhinier', 800, 'Drenas', 38349729998).
-Stafi(10, 'Anthiathia', 'Fern', 'Kamarier', 411, 'Malisheve', 38349148062).
+tavolina(1, 'E Lire').
+tavolina(2, 'E Lire').
+tavolina(3, 'E Zene').
+tavolina(4, 'E Lire').
+tavolina(5, 'E Zene').
+tavolina(6, 'E Lire').
+tavolina(7, 'E Zene').
+tavolina(8, 'E Lire').
+tavolina(9, 'E Zene') .
+tavolina(10, 'E Zene') .
 
 
-%Konsumatori (ID, Emri,Mbiemri, Telefoni, Adresa).
+%stafi(ID, Emri, Mbiemri, Roli, Paga, Adresa, Nr.Tel).
 
-Konsumatori(182628905, 'Farrel', 'Houten', 38349867123, 'Prishtine').
-Konsumatori(329205740, 'Tanya', 'Bissett', 38349312838, 'Drenas').
-Konsumatori(454035610, 'Kelsey', 'Pibworth', 38349622172, 'Malisheve').
-Konsumatori(173157921, 'Even', 'Ranshaw', 38349208401, 'Peje').
-Konsumatori(557467478, 'Christoper', 'Alf', 38349177000, 'Prizren').
-Konsumatori(437644808, 'Chloris', 'Hallowes', 38349970004, 'Drenas').
-Konsumatori(402863845, 'Tallou', 'Denman', 38349775717, 'Prishtine').
-Konsumatori(412480259, 'Helga', 'Gimbart', 38349261991, 'Gjakove').
-Konsumatori(268247245, 'Aldis', 'Manns', 38349741071, 'Prizren').
-Konsumatori(953324644, 'Polly', 'Revelle', 38349987526, 'Malisheve').
-
-
-%Rezervimet(ID, Data, Rezevuar, Puntori, Klienti, Tavolina, Anuluar).
-
-Rezervimet(1, date(10, 27, 2022), date(10, 29, 2022), 2, 329205740, 3, FALSE).
-Rezervimet(2, date(03, 23, 2021), date(03, 28, 2021), 8, 557467478, 4, FALSE).
-Rezervimet(3, date(10, 15, 2021), date(10, 18, 2021), 2, 402863845, 1, FALSE).
-Rezervimet(4, date(09, 17, 2022), date(09, 18, 2022), 8, 412480259, 2, TRUE).
-Rezervimet(5, date(03, 23, 2022), date(03, 28, 2022), 8, 329205740, 3, TRUE).
-Rezervimet(6, date(08, 28, 2021), date(09, 11, 2021), 2, 268247245, 2, FALSE).
-Rezervimet(7, date(05, 23, 2022), date(05, 25, 2022), 2, 557467478, 3, TRUE).
-Rezervimet(8, date(01, 18, 2021), date(01, 21, 2021), 8, 437644808, 7, FALSE).
-Rezervimet(9, date(04, 15, 2022), date(04, 15, 2022), 2, 329205740, 8, FALSE).
-Rezervimet(10, date(10, 15, 2022), date(10, 15, 2022), 8, 173157921, 10, FALSE).
+stafi(1, 'Gabi', 'Stevens', 'Menaxher', 1150, 'Drenas', 38349271596 ).
+stafi(2, 'Denise', 'Blooman', 'Recepsionit', 500, 'Prishtine', 38349528431).
+stafi(3,'Lutero','Soldi', 'Kamarier', 500,'Prizren',38349900960).
+stafi(4, 'Zita', 'Mandres', 'Krye-Kamarier', 650, 'Malisheve',38349136737).
+stafi(5, 'Fernanda', 'Limpenny', 'Kuzhinier', 800, 'Peje', 38349145741).
+stafi(6, 'Inge', 'Anstiss', 'Ndihmes Kuzhinier', 600, 'Kline', 38349772449).
+stafi(7, 'Riano', 'Bunch', 'Krye Kuzhinier', 1200, 'Mitrovice', 38349117298).
+stafi(8, 'Starlin', 'Fennell', 'Recepsionit', 500, 'Prishtine', 38349289592).
+stafi(9, 'Auberta', 'Tiler', 'Kuzhinier', 800, 'Drenas', 38349729998).
+stafi(10, 'Anthiathia', 'Fern', 'Kamarier', 411, 'Malisheve', 38349148062).
 
 
-%Porosia(ID, Tavolina, Punetori, Artikuj, Data).
+%konsumatori (ID, Emri,Mbiemri, Telefoni, Adresa).
 
-Porosia(1, 3, 10, 2, date(08, 31, 2021)).
-Porosia(2, 4, 3, 4, date(03, 19, 2021)).
-Porosia(3, 1, 4, 5, date(03, 15, 2022)).
-Porosia(4, 2, 10, 1, date(02, 15, 2021)).
-Porosia(5, 3, 4, 2, date(04, 27, 2022)).
-Porosia(6, 2, 4, 4, date(09, 24, 2022)).
-Porosia(7, 3, 3, 6, date(01, 29, 2022)).
-Porosia(8, 7, 3, 2, date(05, 15, 2022)).
-Porosia(9, 8, 10, 2, date(01, 29, 2022)).
-Porosia(10, 10, 4, 1, date(05, 15, 2022)).
-
-
-%Menu(ID, Kategoria , Ushqimi , Pershkrimi , Cmimi).
-
-Menu(1, 'Pica', 'Shtepie', '/', 6).
-Menu(2, 'Mengjes', 'Omlet', '/', 2).
-Menu(3, 'Skara', 'Mish Qingji', '/', 9.5).
-Menu(4, 'Pije', 'Birre', '/', 2).
-Menu(5, 'Skara', 'Biftek Viqi', '/', 14).
-Menu(6, 'Pasta', 'Boloneze', '/', 4).
-Menu(7, 'Rizoto', 'Fruta Deti', '/', 7).
-Menu(8, 'Ushqim Deti', 'Midhje', '/', 12).
-Menu(9, 'Pica', 'Pershute', '/', 5).
-Menu(10, 'Skara', 'Kombinim', '/', 9).
+konsumatori(182628905, 'Farrel', 'Houten', 38349867123, 'Prishtine').
+konsumatori(329205740, 'Tanya', 'Bissett', 38349312838, 'Drenas').
+konsumatori(454035610, 'Kelsey', 'Pibworth', 38349622172, 'Malisheve').
+konsumatori(173157921, 'Even', 'Ranshaw', 38349208401, 'Peje').
+konsumatori(557467478, 'Christoper', 'Alf', 38349177000, 'Prizren').
+konsumatori(437644808, 'Chloris', 'Hallowes', 38349970004, 'Drenas').
+konsumatori(402863845, 'Tallou', 'Denman', 38349775717, 'Prishtine').
+konsumatori(412480259, 'Helga', 'Gimbart', 38349261991, 'Gjakove').
+konsumatori(268247245, 'Aldis', 'Manns', 38349741071, 'Prizren').
+konsumatori(953324644, 'Polly', 'Revelle', 38349987526, 'Malisheve').
 
 
-%Pagesa(ID, Kategoria , Punetori , Porosia, Shuma, Forma).
+%rezervimet(ID, Data, Rezevuar, Puntori, Klienti, Tavolina, Anuluar).
 
-Pagesa().
-Pagesa().
-Pagesa().
-Pagesa().
-Pagesa().
-Pagesa().
-Pagesa().
-Pagesa().
-Pagesa().
-Pagesa().
-
-
-%Furnizimi(ID, Perberesit , Furnizuesi, Puntori, Data e Furnizimit, Data E Skadimit, Qmimi, Sasia).
-
-Furnizimi().
-Furnizimi().
-Furnizimi().
-Furnizimi().
-Furnizimi().
-Furnizimi().
-Furnizimi().
-Furnizimi().
-Furnizimi().
-Furnizimi().
+rezervimet(1, date(2022, 10, 27), date(2022, 10, 29), 2, 329205740, 3, 'TRUE').
+rezervimet(2, date(2021,03, 23), date(2021,03, 28), 8, 557467478, 4, 'FALSE').
+rezervimet(3, date(2021,10, 15), date(2021,10, 18), 2, 402863845, 1, 'FALSE').
+rezervimet(4, date(2022, 09, 17), date(2022, 09, 18), 8, 412480259, 2, 'TRUE').
+rezervimet(5, date(2022, 03, 23), date(2022, 03, 28), 8, 329205740, 3, 'TRUE').
+rezervimet(6, date(2021,08, 28), date(2021,09, 11), 2, 268247245, 2, 'FALSE').
+rezervimet(7, date(2022, 05, 23), date(2022, 05, 25), 2, 557467478, 3, 'TRUE').
+rezervimet(8, date(2021,01, 18), date(2021,01, 21), 8, 437644808, 7, 'FALSE').
+rezervimet(9, date(2022, 04, 15), date(2022, 04, 15), 2, 329205740, 8, 'FALSE').
+rezervimet(10, date(2022, 10, 15), date(2022, 10, 15), 8, 173157921, 10, 'FALSE').
 
 
+%porosia(ID, Tavolina, Punetori, Artikuj, Data).
 
-%Furnizuesi(ID, Emri, Kontakti).
-
-Furnizuesi().
-Furnizuesi().
-Furnizuesi().
-Furnizuesi().
-Furnizuesi().
-Furnizuesi().
-Furnizuesi().
-Furnizuesi().
-Furnizuesi().
-Furnizuesi().
-
-
-%Stoqet(ID, Produkti, Sasia, Vendi, Furnizimi).
-
-Stoqet().
-Stoqet().
-Stoqet().
-Stoqet().
-Stoqet().
-Stoqet().
-Stoqet().
-Stoqet().
-Stoqet().
-Stoqet().
+porosia(1, 3, 10, 2, date(2021,08, 31)).
+porosia(2, 4, 3, 4, date(2021,03, 19)).
+porosia(3, 1, 4, 5, date(2022, 03, 15)).
+porosia(4, 2, 10, 1, date(2021,02, 15)).
+porosia(5, 3, 4, 2, date(2022, 04, 27)).
+porosia(6, 2, 4, 4, date(2022, 09, 24)).
+porosia(7, 3, 3, 6, date(2022, 01, 29)).
+porosia(8, 7, 3, 2, date(2022, 05, 15)).
+porosia(9, 8, 10, 2, date(2022, 01, 29)).
+porosia(10, 10, 4, 1, date(2022, 05, 15)).
 
 
+%menu(ID, Kategoria , Ushqimi , Pershkrimi , Cmimi).
+
+menu(1, 'Pica', 'Shtepie', 'aaaaaa', 6).
+menu(2, 'Mengjes', 'Omlet', 'aaaaaa', 2).
+menu(3, 'Skara', 'Mish Qingji', 'aaaaaa', 9.5).
+menu(4, 'Pije', 'Birre', 'aaaaaa', 2).
+menu(5, 'Skara', 'Biftek Viqi', 'aaaaaa', 14).
+menu(6, 'Pasta', 'Boloneze', 'aaaaaa', 4).
+menu(7, 'Rizoto', 'Fruta Deti', 'aaaaaa', 7).
+menu(8, 'Ushqim Deti', 'Midhje', 'aaaaaa', 12).
+menu(9, 'Pica', 'Pershute', 'aaaaaa', 5).
+menu(10, 'Skara', 'Kombinim', 'aaaaaa', 9).
+
+ 
+query1(ID, Emri, Mbiemri, Telefoni, Adresa):- konsumatori(ID, Emri,Mbiemri, Telefoni, Adresa), Adresa='Prishtine'.
+
+selector(Klienti,Rezevuar,Anuluar):-rezervimet(_, _, Rezevuar,_,Klienti,_, Anuluar), Anuluar='TRUE', year(Rezevuar) > 2020, year(Rezevuar) < 2023. 
+selector2(ID,Emri,Mbiemri):-konsumatori(ID,Emri,Mbiemri,_,_).
+query3(Emri,Mbiemri):- selector(Klienti,_,_), selector2(ID,Emri,Mbiemri), Klienti= ID.
 
 
+query4(Emri ,Mbiemri,Paga):-stafi(_,Emri, Mbiemri,_, Paga,_,_), Paga > 500.
