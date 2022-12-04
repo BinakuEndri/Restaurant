@@ -42,30 +42,30 @@ Konsumatori(953324644, 'Polly', 'Revelle', 38349987526, 'Malisheve').
 
 %Rezervimet(ID, Data, Rezevuar, Puntori, Klienti, Tavolina, Anuluar).
 
-Rezervimet(1, 10/27/2022, 10/29/2022, 2, 329205740, 3, FALSE).
-Rezervimet(2, 03/23/2021, 03/28/2021, 8, 557467478, 4, FALSE).
-Rezervimet(3, 10/15/2021, 10/18/2021, 2, 402863845, 1, FALSE).
-Rezervimet(4, 09/17/2022, 09/18/2022, 8, 412480259, 2, TRUE).
-Rezervimet(5, 03/23/2022, 03/28/2022, 8, 329205740, 3, TRUE).
-Rezervimet(6, 08/28/2021, 09/11/2021, 2, 268247245, 2, FALSE).
-Rezervimet(7, 05/23/2022, 05/25/2022, 2, 557467478, 3, TRUE).
-Rezervimet(8, 01/18/2021, 01/21/2021, 8, 437644808, 7, FALSE).
-Rezervimet(9, 04/15/2022, 04/15/2022, 2, 329205740, 8, FALSE).
-Rezervimet(10, 10/15/2022, 10/15/2022, 8, 173157921, 10, FALSE).
+Rezervimet(1, date(10, 27, 2022), date(10, 29, 2022), 2, 329205740, 3, FALSE).
+Rezervimet(2, date(03, 23, 2021), date(03, 28, 2021), 8, 557467478, 4, FALSE).
+Rezervimet(3, date(10, 15, 2021), date(10, 18, 2021), 2, 402863845, 1, FALSE).
+Rezervimet(4, date(09, 17, 2022), date(09, 18, 2022), 8, 412480259, 2, TRUE).
+Rezervimet(5, date(03, 23, 2022), date(03, 28, 2022), 8, 329205740, 3, TRUE).
+Rezervimet(6, date(08, 28, 2021), date(09, 11, 2021), 2, 268247245, 2, FALSE).
+Rezervimet(7, date(05, 23, 2022), date(05, 25, 2022), 2, 557467478, 3, TRUE).
+Rezervimet(8, date(01, 18, 2021), date(01, 21, 2021), 8, 437644808, 7, FALSE).
+Rezervimet(9, date(04, 15, 2022), date(04, 15, 2022), 2, 329205740, 8, FALSE).
+Rezervimet(10, date(10, 15, 2022), date(10, 15, 2022), 8, 173157921, 10, FALSE).
 
 
 %Porosia(ID, Tavolina, Punetori, Artikuj, Data).
 
-Porosia(1, 3, 10, 2, 08/31/2021).
-Porosia(2, 4, 3, 4, 03/19/2021).
-Porosia(3, 1, 4, 5, 03/15/2022).
-Porosia(4, 2, 10, 1, 02/15/2021).
-Porosia(5, 3, 4, 2, 04/27/2022).
-Porosia(6, 2, 4, 4, 09/24/2022).
-Porosia(7, 3, 3, 6, 01/29/2022).
-Porosia(8, 7, 3, 2, 05/15/2022).
-Porosia(9, 8, 10, 2, 01/29/2022).
-Porosia(10, 10, 4, 1, 05/15/2022).
+Porosia(1, 3, 10, 2, date(08, 31, 2021)).
+Porosia(2, 4, 3, 4, date(03, 19, 2021)).
+Porosia(3, 1, 4, 5, date(03, 15, 2022)).
+Porosia(4, 2, 10, 1, date(02, 15, 2021)).
+Porosia(5, 3, 4, 2, date(04, 27, 2022)).
+Porosia(6, 2, 4, 4, date(09, 24, 2022)).
+Porosia(7, 3, 3, 6, date(01, 29, 2022)).
+Porosia(8, 7, 3, 2, date(05, 15, 2022)).
+Porosia(9, 8, 10, 2, date(01, 29, 2022)).
+Porosia(10, 10, 4, 1, date(05, 15, 2022)).
 
 
 %Menu(ID, Kategoria , Ushqimi , Pershkrimi , Cmimi).
@@ -84,7 +84,7 @@ Menu(10, 'Skara', 'Kombinim', '/', 9).
 
 %Pagesa(ID, Kategoria , Punetori , Porosia, Shuma, Forma).
 
-Pagesa(5,).
+Pagesa().
 Pagesa().
 Pagesa().
 Pagesa().
