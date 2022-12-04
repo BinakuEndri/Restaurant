@@ -12,8 +12,6 @@ Tavolina(9, 'E Zene').
 Tavolina(10, 'E Zene').
 
 
-
-
 %Stafi(ID, Emri, Mbiemri, Roli, Paga, Adresa, Nr.Tel).
 
 Stafi(1, 'Gabi', 'Stevens', 'Menaxher', 1150, 'Drenas', 38349271596 ).
