@@ -81,12 +81,17 @@ menu(8, 'Ushqim Deti', 'Midhje', 'aaaaaa', 12).
 menu(9, 'Pica', 'Pershute', 'aaaaaa', 5).
 menu(10, 'Skara', 'Kombinim', 'aaaaaa', 9).
 
- 
+
 query1(ID, Emri, Mbiemri, Telefoni, Adresa):- konsumatori(ID, Emri,Mbiemri, Telefoni, Adresa), Adresa='Prishtine'.
 
+sel(ID,Klienti,Rezervuar):-rezervimet(ID,_,Rezervuar,_,Klienti,_,_), year(Rezervuar) = 2022.
+sel2(ID1,Klienti1,Rezervuar1):-rezervimet(ID1,_,Rezervuar1,_,Klienti1,_,_).
+sel3(ID,Klienti,Rezervuar):- sel(ID,Klienti,Rezervuar),sel2(ID1,Klienti1,Rezervuar1), Klienti= Klienti1, not(ID=ID1) , year(Rezervuar)= year(Rezervuar1).
+sel4(ID,Emri,Mbiemri):-konsumatori(ID,Emri,Mbiemri,_,_).
+query2(Emri,Mbiemri):-sel3(_,Klienti,_), sel4(ID,Emri,Mbiemri), Klienti=ID.
+
 selector(Klienti,Rezevuar,Anuluar):-rezervimet(_, _, Rezevuar,_,Klienti,_, Anuluar), Anuluar='TRUE', year(Rezevuar) > 2020, year(Rezevuar) < 2023. 
-selector2(ID,Emri,Mbiemri):-konsumatori(ID,Emri,Mbiemri,_,_).
-query3(Emri,Mbiemri):- selector(Klienti,_,_), selector2(ID,Emri,Mbiemri), Klienti= ID.
+query3(Emri,Mbiemri):- selector(Klienti,_,_), sel4(ID,Emri,Mbiemri), Klienti= ID.
 
 
 query4(Emri ,Mbiemri,Paga):-stafi(_,Emri, Mbiemri,_, Paga,_,_), Paga > 500.
