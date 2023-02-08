@@ -348,9 +348,14 @@ values
 Select * From Porosia;
 
 
+
+
+
 #Query 1    
 Select * From Konsumatori k
 Where k.konsumatori_adresa = 'Prishtine';
+
+
 
 #Query 2
 select k1.konsumatori_emri as 'Emri', k1.konsumatori_mbiemri as 'Mbiemri' from Konsumatori k1
@@ -359,12 +364,23 @@ group by (k1.konsumatori_id)
 having count(k1.konsumatori_id) >= 2;
 
 #Query 3
-select k2.konsumatori_emri as 'Emri', k2.konsumatori_mbiemri as 'Mbiermi' from Konsumatori k2
-inner join  Rezervimi r1 on r1.klienti = k2.konsumatori_id and r1.rezervuar between '2021-01-01' and '2022-12-31' and r1.anuluar= true;
+select k2.konsumatori_emri as 'Emri', 
+k2.konsumatori_mbiemri as 'Mbiermi' 
+from Konsumatori k2
+inner join  Rezervimi r1 on r1.klienti = k2.konsumatori_id 
+and r1.rezervuar between '2021-01-01' and '2022-12-31' 
+and r1.anuluar= true;
+
+
+
 
 #Query 4 
 Select s.stafi_emri as 'Emri', s.stafi_mbiemri as 'Mbiermi'From Stafi s
-Where s.stafi_paga > 500;
+Where s.stafi_paga > 500 union 
+(select k.konsumatori_emri as 'Emri', 
+k.konsumatori_mbiemri as 'Mbiemri' from konsumatori k
+inner join Rezervimi r on k.konsumatori_id = r.klienti 
+where r.rezervuar ='2023-01-01');
 
 
 #Query 5
@@ -384,12 +400,20 @@ ORDER BY Numri_i_porosive DESC
 LIMIT 5;
 
 #Query 6
-Select year(p.porosia_data) as 'Viti' ,month(p.porosia_data) as 'Muaji', m.kategoria as 'Kategoria' ,m.ushqimi as 'Ushqimi' , p.sasia*m.cmimi as Shuma from Porosia p
+Select 
+year(p.porosia_data) as 'Viti' ,
+month(p.porosia_data) as 'Muaji', 
+m.kategoria as 'Kategoria' ,
+m.ushqimi as 'Ushqimi' , 
+p.sasia*m.cmimi as Shuma 
+from Porosia p
 Inner Join Menu m on p.artikuj= m.menu_id and p.porosia_data between '2022-10-01' and '2022-12-01'
 order by Shuma desc;
 
 #Query 7
-select Ditet.emri as 'Emri' , count(dayofweek(Rezervimi.rezervuar))/9 as 'Numri'  from Ditet, Rezervimi
+select Ditet.emri as 'Emri' , 
+count(dayofweek(Rezervimi.rezervuar))/9 as 'Numri'  
+from Ditet, Rezervimi
 Where month(Rezervimi.rezervuar) in (7,8) and Ditet.dita_id = dayofweek(Rezervimi.rezervuar)
 group by dayofweek(Rezervimi.rezervuar),Ditet.dita_id
 order by Ditet.dita_id;
@@ -397,7 +421,7 @@ order by Ditet.dita_id;
 #Query 8
 SELECT m.kategoria, m.ushqimi, sum(sasia) AS shuma 
 FROM porosia
-inner join Menu m on m.menu_id = artikuj and m.kategoria!="Pije" and year(porosia_data)=year(CURDATE())
+inner join Menu m on m.menu_id = artikuj and m.kategoria!="Pije" and year(porosia_data)='2022'
 GROUP BY artikuj 
 ORDER BY shuma DESC
 LIMIT 1;
@@ -412,28 +436,38 @@ having sum(sasia) >= 3;
 
 /*  FAZA 3  */
 
-
-
 create view pija_me_e_shtrenjt as
 SELECT m.kategoria, m.ushqimi, m.cmimi 
 FROM menu m
 inner join porosia p on p.artikuj = m.menu_id and m.kategoria = 'pije'
 order by m.cmimi desc
 limit 1;
+SELECT * FROM restaurant.pija_me_e_shtrenjt;
+
+
 
 create view produket_me_afat_te_skaduar as
-SELECT  f.perberesit, f.data_e_skadimit, f.sasia, f.sasia * f.qmimi as shuma_e_humbur from furnizimi f
+SELECT  f.perberesit, 
+f.data_e_skadimit, 
+f.sasia, 
+f.sasia * f.qmimi as shuma_e_humbur 
+from furnizimi f
 where f.data_e_skadimit <= NOW();
+SELECT * FROM restaurant.produket_me_afat_te_skaduar;
+
 
 create view top_5_porosite_ne_Q4_2022 as
-SELECT p.porosia_id, m.kategoria, m.ushqimi, p.sasia, m.cmimi,p.sasia * m.cmimi as vlera_porosise
+SELECT p.porosia_id, 
+m.kategoria, 
+m.ushqimi, 
+p.sasia, 
+m.cmimi,
+p.sasia * m.cmimi as vlera_porosise
 from porosia p inner join menu m on m.menu_id = p.artikuj
 and p.porosia_data between '2022-09-01' and '2022-12-31'
 order by vlera_porosise desc
 limit 5;
-
-
-
+SELECT * FROM restaurant.top_5_porosite_ne_Q4_2022;
 
 
 delimiter $$
@@ -442,11 +476,9 @@ BEFORE UPDATE ON stafi
 FOR EACH ROW
 BEGIN
   DECLARE duplicate INT;
-
   SELECT COUNT(*) INTO duplicate
   FROM stafi
   WHERE stafi_id = NEW.stafi_id;
-
   IF duplicate > 0 THEN
     SIGNAL SQLSTATE '45000'
     SET MESSAGE_TEXT = 'Kjo id ekziston ,  ju lutem shenoni id tjter';
@@ -477,7 +509,6 @@ SELECT stafi_roli into stafi_roli FROM stafi WHERE stafi_id = stafi_id;
 END //
 delimiter ;
 
- 
 CALL trego_roli3(2,@stafi_roli);
 SELECT @stafi_roli;
 
@@ -489,8 +520,75 @@ BEGIN
     SELECT * FROM stafi WHERE stafi_roli = 'Kamarier';
 END //count_staff_payment
 delimiter ;
-
 CALL get_waiters();
+
+
+delimiter //
+CREATE TRIGGER update_tavolina_status_on_insert_rezervimi
+AFTER INSERT ON Rezervimi
+FOR EACH ROW
+BEGIN
+  UPDATE Tavolina SET statusi = 'E zene' WHERE tavolina_id = NEW.tavolina;
+END;
+delimiter;
+
+insert into Rezervimi(
+rezervimi_id,
+rezervimi_data,
+rezervuar,
+punetori,
+klienti,
+tavolina,
+anuluar
+)
+VALUES
+(45, '2023-10-27', date '2023-10-29', 10, 329205740, 6, false);
+
+select * from Tavolina
+
+
+
+delimiter //
+CREATE PROCEDURE sort_stafi_by_salary()
+BEGIN
+  SELECT stafi_id, stafi_emri, 
+  stafi_mbiemri, stafi_roli, 
+  stafi_paga, stafi_adresa, 
+  stafi_telefoni
+  FROM Stafi
+  ORDER BY stafi_paga ASC;
+END;
+delimiter;
+CALL sort_stafi_by_salary;
+
+
+delimiter //
+CREATE TRIGGER update_stoqet_on_insert_porosia
+AFTER INSERT ON Porosia
+FOR EACH ROW
+BEGIN
+  UPDATE Stoqet SET sasia = sasia - NEW.sasia WHERE produkti = (SELECT ushqimi FROM Menu WHERE menu_id = NEW.artikuj);
+END;
+delimiter ;
+
+
+DELIMITER //
+
+CREATE FUNCTION get_staff_salary(stafi_id INT)
+RETURNS INT DETERMINISTIC
+BEGIN
+DECLARE stafi_paga INT;
+
+SELECT stafi_paga INTO stafi_paga
+FROM Stafi
+WHERE stafi_id = stafi_id;
+
+RETURN stafi_paga;
+END;
+DELIMITER ;
+
+
+SELECT get_staff_salary(6);
 
 
 drop table Funizuesi;
@@ -501,5 +599,3 @@ drop table Pagesa;
 drop table Rezervimi;
 
 
-
-    
